@@ -34,6 +34,7 @@ io.on('connection', (socket) => {
       });
   });
 
-server.listen(80, () => {
-  console.log('listening on *:80');
+const port = 5000;
+server.listen(port, () => {
+  console.log('listening on *:' + port);
 });
