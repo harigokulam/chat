@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon index.js",
-    "server": "http-server",
-    "start": "node server.js"
+    
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
