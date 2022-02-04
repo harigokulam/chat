@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <title>Private Chat</title>
+
+    <style>
+        body {
+            margin: 20px;
+            padding-bottom: 3rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #form {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 0.25rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            height: 3rem;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+        }
+
+        #message {
+            border: none;
+            padding: 0 1rem;
+            flex-grow: 1;
+            border-radius: 2rem;
+            margin: 0.25rem;
+        }
+
+        #input:focus {
+            outline: none;
+        }
+
+        #form>button {
+            background: #333;
+            border: none;
+            padding: 0 1rem;
+            margin: 0.25rem;
+            border-radius: 3px;
+            outline: none;
+            color: #fff;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages>li {
+            padding: 0.5rem 1rem;
+        }
+
+        #messages>li:nth-child(odd) {
+            background: #efefef;
+        }
+        .self {
+            text-align: right;
+            background-color: aliceblue;
+            margin-top: 5px;
+            padding-right: 5px;
+        }
+        .others>p,
+        .self>p {
+            font-style: italic;
+            font-weight: bold;
+        }
+        .others {
+            text-align : left;
+            background-color: azure;
+            margin-top: 5px;
+            padding-left: 5px;
+        }
+
+        #chat-area {
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div id="login">
+        <p>Welcome</p>
+
+        <p>Name: <input id="name" autocomplete="on" /><button id="start">Start</button></p>
+    </div>
+    <div id="message-area">
+        <ul id="messages1"></ul>
+        <form id="form" action="">
+            <input id="input" autocomplete="off" /><button>Send</button>
+        </form>
+    </div> -->
+    <div>
+
+        <div id="init-area">
+            <form>
+                <label for="user">Name : </label><input id="user" /><button id="btn-join" type="submit">Join</button>
+            </form>
+        </div>
+        <div id="chat-area" >
+            <div id="messages">
+                
+            </div>
+            <form id="form">
+                <label for="message">Message : </label><input id="message" /><button id="btn-send" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script src="js/chat"></script>
+</body>
+
+</html>
